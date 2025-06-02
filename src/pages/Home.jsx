@@ -21,8 +21,8 @@ export default function Home() {
               </div>
             </div>
             
-<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-              Bolly<span className="text-yellow-300">Brains</span>
+<h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-black text-white mb-4 drop-shadow-2xl tracking-tight">
+              Bolly<span className="text-gold animate-glow">Brains</span>
             </h1>
             
             <p className="text-lg sm:text-xl text-white/90 max-w-xl mx-auto mb-8 leading-relaxed">

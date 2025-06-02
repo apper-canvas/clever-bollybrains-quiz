@@ -6,49 +6,61 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
+colors: {
         primary: {
-          DEFAULT: '#d4af37',
-          light: '#f4e07a',
-          dark: '#b8941f'
+          DEFAULT: '#0066ff',
+          light: '#3385ff',
+          dark: '#0052cc'
         },
         secondary: {
-          DEFAULT: '#8b1538',
-          light: '#c21e56',
-          dark: '#6b0f2a'
+          DEFAULT: '#ff4500',
+          light: '#ff6633',
+          dark: '#cc3700'
         },
-        accent: '#ff6b35',
+        accent: {
+          DEFAULT: '#ff1493',
+          light: '#ff47a6',
+          dark: '#cc1075'
+        },
+        gold: {
+          DEFAULT: '#ffd700',
+          light: '#ffeb3b',
+          dark: '#e6c200'
+        },
         surface: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a'
+          50: '#fafbff',
+          100: '#f0f4ff',
+          200: '#dbeafe',
+          300: '#bfdbfe',
+          400: '#93c5fd',
+          500: '#60a5fa',
+          600: '#3b82f6',
+          700: '#2563eb',
+          800: '#1d4ed8',
+          900: '#1e40af'
         }
       },
-fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-        heading: ['Poppins', 'ui-sans-serif', 'system-ui']
+      fontFamily: {
+        sans: ['Nunito', 'Inter', 'ui-sans-serif', 'system-ui'],
+        heading: ['Fredoka', 'Poppins', 'ui-sans-serif', 'system-ui'],
+        display: ['Fredoka', 'ui-sans-serif', 'system-ui']
       },
       boxShadow: {
-        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
-        'neu-light': '5px 5px 15px #d1d9e6, -5px -5px 15px #ffffff',
-        'neu-dark': '5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.05)',
-        'glow': '0 0 20px rgba(212, 175, 55, 0.3)'
+        'soft': '0 4px 20px -3px rgba(0, 102, 255, 0.15), 0 10px 25px -2px rgba(0, 0, 0, 0.08)',
+        'card': '0 8px 25px -5px rgba(0, 102, 255, 0.2), 0 4px 12px -2px rgba(0, 0, 0, 0.15)',
+        'vibrant': '0 10px 40px -10px rgba(255, 69, 0, 0.4), 0 4px 25px -5px rgba(255, 20, 147, 0.3)',
+        'electric': '0 0 30px rgba(0, 102, 255, 0.5), 0 0 60px rgba(255, 20, 147, 0.3)',
+        'glow': '0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 69, 0, 0.4)'
       },
       borderRadius: {
-        'xl': '0.75rem',
-        '2xl': '1rem'
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem'
       },
       backgroundImage: {
-        'bollywood-pattern': 'radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(139, 21, 56, 0.1) 0%, transparent 50%)',
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'bollywood-burst': 'radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.2) 0%, transparent 60%), radial-gradient(circle at 70% 70%, rgba(255, 69, 0, 0.2) 0%, transparent 60%), radial-gradient(circle at 50% 10%, rgba(255, 20, 147, 0.15) 0%, transparent 50%)',
+        'electric-gradient': 'linear-gradient(135deg, #0066ff 0%, #ff1493 50%, #ffd700 100%)',
+        'vibrant-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
       }
     }
   },

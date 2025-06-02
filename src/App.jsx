@@ -23,9 +23,9 @@ function App() {
           draggable
           pauseOnHover
           theme="colored"
-          className="mt-16"
+className="mt-16"
         />
-      </div>
+</div>
     </Router>
   )
 }

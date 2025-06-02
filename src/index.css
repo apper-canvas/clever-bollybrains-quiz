@@ -14,58 +14,59 @@
 
 @layer components {
   .quiz-card {
-    @apply bg-white/80 backdrop-blur-sm border border-surface-200 rounded-2xl shadow-card;
+    @apply bg-white/95 backdrop-blur-lg border-2 border-primary/20 rounded-3xl shadow-vibrant;
   }
   
   .quiz-button {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 transform hover:scale-105 active:scale-95;
   }
   
   .quiz-button-primary {
-    @apply bg-gradient-to-r from-primary to-primary-light text-white hover:shadow-glow focus:ring-primary;
+    @apply bg-gradient-to-r from-primary via-accent to-primary-light text-white hover:shadow-electric focus:ring-primary/50 shadow-lg;
   }
   
   .quiz-button-secondary {
-    @apply bg-gradient-to-r from-secondary to-secondary-light text-white hover:shadow-lg focus:ring-secondary;
+    @apply bg-gradient-to-r from-secondary via-accent to-gold text-white hover:shadow-glow focus:ring-secondary/50 shadow-lg;
   }
   
-.quiz-option {
-    @apply w-full p-4 text-left rounded-2xl border-2 border-surface-200 bg-gradient-to-r from-white/80 to-white/60 hover:from-white/95 hover:to-white/85 hover:border-orange-300 transition-all duration-300 cursor-pointer transform hover:scale-[1.02];
+  .quiz-option {
+    @apply w-full p-6 text-left rounded-2xl border-3 border-surface-200 bg-gradient-to-br from-white via-surface-50 to-white hover:from-primary/10 hover:via-accent/5 hover:to-secondary/10 hover:border-primary/50 transition-all duration-300 cursor-pointer transform hover:scale-[1.03] hover:shadow-soft;
   }
   
   .quiz-option-selected {
-    @apply border-orange-400 bg-gradient-to-r from-orange-50 to-pink-50 ring-2 ring-orange-200;
+    @apply border-accent bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 ring-4 ring-accent/30 shadow-vibrant;
   }
   
   .quiz-option-correct {
-    @apply border-green-500 bg-gradient-to-r from-green-50 to-emerald-50 ring-2 ring-green-200;
+    @apply border-emerald-400 bg-gradient-to-br from-emerald-100 via-green-50 to-emerald-100 ring-4 ring-emerald-300/50 shadow-lg;
   }
   
   .quiz-option-incorrect {
-    @apply border-red-500 bg-gradient-to-r from-red-50 to-rose-50 ring-2 ring-red-200;
+    @apply border-red-400 bg-gradient-to-br from-red-100 via-rose-50 to-red-100 ring-4 ring-red-300/50 shadow-lg;
   }
+
   .difficulty-badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-md;
   }
   
   .difficulty-easy {
-    @apply bg-green-100 text-green-800;
+    @apply bg-gradient-to-r from-emerald-400 to-green-400 text-white shadow-emerald-300/50;
   }
   
   .difficulty-medium {
-    @apply bg-yellow-100 text-yellow-800;
+    @apply bg-gradient-to-r from-amber-400 to-yellow-400 text-white shadow-amber-300/50;
   }
   
   .difficulty-hard {
-    @apply bg-red-100 text-red-800;
+    @apply bg-gradient-to-r from-red-400 to-rose-400 text-white shadow-red-300/50;
   }
   
   .progress-bar {
-    @apply w-full bg-surface-200 rounded-full h-3 overflow-hidden;
+    @apply w-full bg-surface-200 rounded-full h-4 overflow-hidden shadow-inner;
   }
   
   .progress-fill {
-    @apply h-full bg-gradient-to-r from-primary to-primary-light transition-all duration-500 ease-out rounded-full;
+    @apply h-full bg-gradient-to-r from-primary via-accent to-gold transition-all duration-700 ease-out rounded-full shadow-sm;
   }
 }
 
@@ -81,6 +82,14 @@
   .animate-pulse-slow {
     animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-electric {
+    animation: electric 3s ease-in-out infinite;
+  }
 }
 
 @keyframes bounce-subtle {
@@ -88,32 +97,50 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 69, 0, 0.4);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 69, 0, 0.6);
+  }
+}
+
+@keyframes electric {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(0, 102, 255, 0.5), 0 0 50px rgba(255, 20, 147, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 102, 255, 0.7), 0 0 70px rgba(255, 20, 147, 0.5);
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-surface-100;
+  @apply bg-gradient-to-b from-surface-100 to-surface-200 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-surface-300 rounded-full;
+  @apply bg-gradient-to-b from-primary to-accent rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-surface-400;
+  @apply from-primary-dark to-accent-dark;
 }
 
 /* Toast customization */
 .Toastify__toast {
-  @apply rounded-xl;
+  @apply rounded-2xl shadow-vibrant;
 }
 
 .Toastify__progress-bar {
-  @apply bg-gradient-to-r from-primary to-primary-light;
+  @apply bg-gradient-to-r from-primary via-accent to-gold;
 }

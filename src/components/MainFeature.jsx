@@ -593,7 +593,7 @@ const selectAnswer = (answerIndex) => {
 
         {/* Question */}
 <div className="mb-6">
-          <div className="text-xs uppercase tracking-wider text-purple-600 mb-2 font-medium">
+          <div className="text-xs uppercase tracking-widest text-accent mb-3 font-bold">
             {currentQuestion.category}
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-surface-900 leading-tight">
