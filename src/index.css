@@ -29,22 +29,21 @@
     @apply bg-gradient-to-r from-secondary to-secondary-light text-white hover:shadow-lg focus:ring-secondary;
   }
   
-  .quiz-option {
-    @apply w-full p-4 text-left rounded-xl border-2 border-surface-200 bg-white/70 hover:bg-white/90 hover:border-primary/50 transition-all duration-200 cursor-pointer;
+.quiz-option {
+    @apply w-full p-4 text-left rounded-2xl border-2 border-surface-200 bg-gradient-to-r from-white/80 to-white/60 hover:from-white/95 hover:to-white/85 hover:border-orange-300 transition-all duration-300 cursor-pointer transform hover:scale-[1.02];
   }
   
   .quiz-option-selected {
-    @apply border-primary bg-primary/10 ring-2 ring-primary/20;
+    @apply border-orange-400 bg-gradient-to-r from-orange-50 to-pink-50 ring-2 ring-orange-200;
   }
   
   .quiz-option-correct {
-    @apply border-green-500 bg-green-50 ring-2 ring-green-200;
+    @apply border-green-500 bg-gradient-to-r from-green-50 to-emerald-50 ring-2 ring-green-200;
   }
   
   .quiz-option-incorrect {
-    @apply border-red-500 bg-red-50 ring-2 ring-red-200;
+    @apply border-red-500 bg-gradient-to-r from-red-50 to-rose-50 ring-2 ring-red-200;
   }
-  
   .difficulty-badge {
     @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
   }

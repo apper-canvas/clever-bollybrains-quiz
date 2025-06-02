@@ -21,13 +21,12 @@ export default function Home() {
               </div>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-              Bolly<span className="text-primary-light">Brains</span>
+<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+              Bolly<span className="text-yellow-300">Brains</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Test your Bollywood knowledge with our engaging quiz featuring 30 carefully crafted questions 
-              across three difficulty levels. From mainstream hits to deep trivia!
+            <p className="text-lg sm:text-xl text-white/90 max-w-xl mx-auto mb-8 leading-relaxed">
+              30 engaging questions across 3 difficulty levels. Test your Bollywood knowledge!
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 text-sm sm:text-base text-white/80">
