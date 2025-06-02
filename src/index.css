@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .quiz-card {
+    @apply bg-white/80 backdrop-blur-sm border border-surface-200 rounded-2xl shadow-card;
+  }
+  
+  .quiz-button {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .quiz-button-primary {
+    @apply bg-gradient-to-r from-primary to-primary-light text-white hover:shadow-glow focus:ring-primary;
+  }
+  
+  .quiz-button-secondary {
+    @apply bg-gradient-to-r from-secondary to-secondary-light text-white hover:shadow-lg focus:ring-secondary;
+  }
+  
+  .quiz-option {
+    @apply w-full p-4 text-left rounded-xl border-2 border-surface-200 bg-white/70 hover:bg-white/90 hover:border-primary/50 transition-all duration-200 cursor-pointer;
+  }
+  
+  .quiz-option-selected {
+    @apply border-primary bg-primary/10 ring-2 ring-primary/20;
+  }
+  
+  .quiz-option-correct {
+    @apply border-green-500 bg-green-50 ring-2 ring-green-200;
+  }
+  
+  .quiz-option-incorrect {
+    @apply border-red-500 bg-red-50 ring-2 ring-red-200;
+  }
+  
+  .difficulty-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .difficulty-easy {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .difficulty-medium {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .difficulty-hard {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  .progress-bar {
+    @apply w-full bg-surface-200 rounded-full h-3 overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-primary to-primary-light transition-all duration-500 ease-out rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-surface-400;
+}
+
+/* Toast customization */
+.Toastify__toast {
+  @apply rounded-xl;
+}
+
+.Toastify__progress-bar {
+  @apply bg-gradient-to-r from-primary to-primary-light;
+}
