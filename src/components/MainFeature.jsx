@@ -306,21 +306,15 @@ export default function MainFeature() {
     toast.success('Quiz started! Good luck! 🎬')
   }
 
-  const selectAnswer = (answerIndex) => {
+const selectAnswer = (answerIndex) => {
     if (showAnswer) return
     setSelectedAnswer(answerIndex)
-  }
-
-  const submitAnswer = () => {
-    if (selectedAnswer === null) {
-      toast.error('Please select an answer!')
-      return
-    }
-
-    const isCorrect = selectedAnswer === currentQuestion.correctAnswer
+    
+    // Immediately process the answer
+    const isCorrect = answerIndex === currentQuestion.correctAnswer
     const newUserAnswers = [...userAnswers, {
       questionId: currentQuestion.id,
-      selectedAnswer,
+      selectedAnswer: answerIndex,
       isCorrect,
       question: currentQuestion
     }]
@@ -334,18 +328,19 @@ export default function MainFeature() {
     } else {
       toast.error('Oops! That\'s not right 😅')
     }
-  }
-
-  const nextQuestion = () => {
-    if (currentQuestionIndex < QUIZ_QUESTIONS.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1)
-      setSelectedAnswer(null)
-      setShowAnswer(false)
-    } else {
-      setGameState('completed')
-      setEndTime(Date.now())
-      toast.success('Quiz completed! 🏆')
-    }
+    
+    // Auto advance to next question after showing answer
+    setTimeout(() => {
+      if (currentQuestionIndex < QUIZ_QUESTIONS.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1)
+        setSelectedAnswer(null)
+        setShowAnswer(false)
+      } else {
+        setGameState('completed')
+        setEndTime(Date.now())
+        toast.success('Quiz completed! 🏆')
+      }
+    }, 2000)
   }
 
   const restartQuiz = () => {
@@ -672,36 +667,6 @@ export default function MainFeature() {
           )}
         </AnimatePresence>
 
-        {/* Action Button */}
-        <div className="flex justify-center">
-          {!showAnswer ? (
-            <button
-              onClick={submitAnswer}
-              disabled={selectedAnswer === null}
-              className={`quiz-button ${selectedAnswer !== null ? 'quiz-button-primary' : 'quiz-button bg-surface-300 text-surface-500 cursor-not-allowed'}`}
-            >
-              <ApperIcon name="Check" className="w-5 h-5 mr-2" />
-              Submit Answer
-            </button>
-          ) : (
-            <button
-              onClick={nextQuestion}
-              className="quiz-button quiz-button-primary"
-            >
-              {currentQuestionIndex < QUIZ_QUESTIONS.length - 1 ? (
-                <>
-                  <ApperIcon name="ArrowRight" className="w-5 h-5 mr-2" />
-                  Next Question
-                </>
-              ) : (
-                <>
-                  <ApperIcon name="Flag" className="w-5 h-5 mr-2" />
-                  Finish Quiz
-                </>
-              )}
-            </button>
-          )}
-        </div>
       </motion.div>
     </div>
   )
